@@ -31,8 +31,6 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements MovieRecyclerViewAdapter.ListItemClickListener {
 
-    public static final String API_KEY = "cbb90029f34e49e72f26a93e8d60fc54";
-
     private MovieRecyclerViewAdapter mAdapter;
     private List<Movie> movies;
 
@@ -69,10 +67,10 @@ public class MainActivity extends AppCompatActivity implements MovieRecyclerView
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
         Call<MoviesResponse> responseCall;
         if (isRated) {
-            responseCall = apiService.getTopRatedMovies(API_KEY);
+            responseCall = apiService.getTopRatedMovies(getString(R.string.api_key));
             loadProgressBar(true);
         } else {
-            responseCall = apiService.getPopularMovies(API_KEY);
+            responseCall = apiService.getPopularMovies(getString(R.string.api_key));
             loadProgressBar(true);
         }
         responseCall.enqueue(new Callback<MoviesResponse>() {

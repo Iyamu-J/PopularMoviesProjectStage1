@@ -1,8 +1,8 @@
 package com.ayevbeosa.popularmoviesprojectstage1.activity;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -24,7 +24,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.ayevbeosa.popularmoviesprojectstage1.activity.MainActivity.API_KEY;
 import static com.ayevbeosa.popularmoviesprojectstage1.adapter.MovieRecyclerViewAdapter.IMAGE_BASE_URL;
 import static com.ayevbeosa.popularmoviesprojectstage1.adapter.MovieRecyclerViewAdapter.IMAGE_SIZE;
 
@@ -66,7 +65,7 @@ public class DetailsActivity extends AppCompatActivity {
         final Bundle extras = getIntent().getExtras();
 
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<MoviesResponse> call = apiService.getPopularMovies(API_KEY);
+        Call<MoviesResponse> call = apiService.getPopularMovies(getString(R.string.api_key));
         call.enqueue(new Callback<MoviesResponse>() {
             @Override
             public void onResponse(@NonNull Call<MoviesResponse> call, @NonNull Response<MoviesResponse> response) {
