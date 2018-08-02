@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+
+    <string name="original_title_label">Original Title:</string>
+    <string name="overview_label">Plot Synopsis:</string>
+    <string name="user_rating_label">User Rating:</string>
+    <string name="release_date_label">Release Date:</string>
+
+    <string name="movie_poster_image_description">Movie Thumbnail</string>
+
+    <string name="connection_error_message">Failed to connect. Check internet connection</string>
+    <string name="detail_error_message">Getting movie details failed</string>
+
+    <string name="extra_position">extra_position</string>
+    <string name="extra_id">extra_id</string>
+
+    <string name="sort_by_most_popular">Sort By Most Popular</string>
+    <string name="sort_by_most_rated">Sort By Most Rated</string>
+</resources>
